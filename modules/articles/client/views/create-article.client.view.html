@@ -1,0 +1,30 @@
+<section ng-controller="ArticlesController">
+  <div class="page-header">
+    <h1>Edit Silent Auction Item</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="articleForm" class="form-horizontal" ng-submit="create(articleForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label for="title">Name of item to be included in the auction.</label>
+          <input name="title" type="text" ng-model="article.title" id="title" class="form-control" placeholder="Item Name" required>
+          <div ng-messages="articleForm.title.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">A a name for the item is required.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="content">Details of the Item</label>
+          <textarea name="content" ng-model="article.content" id="content" class="form-control" cols="30" rows="10" placeholder="Please be descriptive as possible. Include all items within a bundle if applicable."></textarea>
+          <label for="value">Estimated Value</label>
+          <textarea name="value" ng-model="article.value" id="value" class="form-control" cols="10" placeholder="Please include the estimated value of the item(s)"></textarea>
+        </div>
+        <div class="form-group">
+          <input type="submit" class="btn btn-default">
+        </div>
+        <div ng-show="error" class="text-danger">
+          <strong ng-bind="error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>

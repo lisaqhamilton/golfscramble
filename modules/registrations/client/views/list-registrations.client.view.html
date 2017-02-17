@@ -1,0 +1,22 @@
+<section ng-controller="RegistrationsListController" ng-init="find()">
+  <div class="page-header">
+    <h1>List of All Team Registrations</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="registration in vm.registrations"
+       ui-sref="registrations.view({ registrationId: registration._id })"
+       class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="registration.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="registration.user" ng-bind="registration.user.displayName"></span>
+        <span ng-if="!registration.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="registration.name"></h4>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="vm.registrations.$resolved && !vm.registrations.length">
+    No Registrations yet, why don't you <a ui-sref="registrations.create">create one</a>?
+  </div>
+</section>

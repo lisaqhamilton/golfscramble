@@ -1,0 +1,52 @@
+<section ng-controller="RegistrationsContoller">
+  <div class="page-header">
+    <h1>Please register your team below:</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.form.registrationForm" class="form-horizontal" ng-submit="vm.save(vm.form.registrationForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="name"> Team Name</label>
+          <input name="name" type="text" ng-model="vm.registration.name" id="name" class="form-control" placeholder="Team Name" required>
+          <div ng-messages="vm.form.registrationForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Team name is required.</p>
+          </div>
+        
+          <div class="form-group" show-errors>
+            <label class="control-label" for="playerOne">Player One:</label>
+            <input name="playerOne" type="text" ng-model="vm.registration.playerOne" id="playerOne" class="form-control" placeholder="Enter a team members name">
+            <div ng-messages="vm.form.registrationForm.playerOne.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">To create a team 4 players are required.</p>
+              </div>
+
+              <label class="control-label" for="playerOne">Player Two:</label>
+              <input name="playerTwo" type="text" ng-model="vm.registration.playerTwo" id="playerTwo" class="form-control" placeholder="Enter a team members name">
+              <div ng-messages="vm.form.registrationForm.playerTwo.$error" role="alert">
+                <p class="help-block error-text" ng-message="required">To create a team 4 players are required.</p>
+              </div>
+
+                <label class="control-label" for="playerThree">Player Three:</label>
+                <input name="playerThree" type="text" ng-model="vm.registration.playerThree" id="playerThree" class="form-control" placeholder="Enter a team members name">
+                <div ng-messages="vm.form.registrationForm.playerThree.$error" role="alert">
+                  <p class="help-block error-text" ng-message="required">To create a team 4 players are required.</p>
+                </div>
+
+                <label class="control-label" for="playerFour">Player Four:</label>
+                <input name="playerFour" type="text" ng-model="vm.registration.playerFour" id="playerFour" class="form-control" placeholder="Enter a team members name">
+                <div ng-messages="vm.form.registrationForm.playerFour.$error" role="alert">
+                  <p class="help-block error-text" ng-message="required">To create a team 4 players are required.</p>
+                </div>
+        </div>
+
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">Sign Me Up!</button>
+        </div>
+        <div ng-show="vm.error" class="text-danger">
+          <strong ng-bind="vm.error"></strong>
+        </div>
+      </fieldset>
+    </form>
+      <h4>Thank you for your support of Cloverdale's High School Football Team. </h4>
+  </div>
+</section>
