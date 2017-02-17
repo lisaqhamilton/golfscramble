@@ -19,4 +19,9 @@ module.exports = function(app) {
 
   // Finish by binding the Sponsor middleware
   app.param('sponsorId', sponsors.sponsorByID);
+
+  // app.route('/upload/image')
+  //   .post(upload.postImage);
+
+  
 };

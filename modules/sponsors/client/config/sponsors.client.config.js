@@ -26,7 +26,7 @@
     Menus.addSubMenuItem('topbar', 'sponsors', {
       title: 'Create Sponsor',
       state: 'sponsors.create',
-      roles: ['user']
+      
     });
   }
 }());

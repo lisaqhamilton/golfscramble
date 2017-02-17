@@ -7,16 +7,39 @@
        ui-sref="volunteers.view({ volunteerId: volunteer._id })"
        class="list-group-item">
       <small class="list-group-item-text">
-        Posted on
+      <!--   Posted on
         <span ng-bind="volunteer.created | date:'mediumDate'"></span>
-        by
+        by -->
         <span ng-if="volunteer.user" ng-bind="volunteer.user.displayName"></span>
         <span ng-if="!volunteer.user">Deleted User</span>
       </small>
-      <h4 class="list-group-item-heading" ng-bind="volunteer.name"></h4>
+      <table class="table table-striped" id="volunteer">
+        <td><h4 class="list-group-item-heading" ng-bind="volunteer.name"></h4></td>
+        <td><label class="list-group-item" ng-bind="volunteer.age"></label></td>
+      </table>
+       
+<div class="col-lg-6">
+    <div class="input-group">
+      <span class="input-group-addon" id="legalAge">
+        <input type="radio" aria-label="Yes">Yes
+        <input type="radio" name="No">
+      </span>
+    </div>
+    </div>
+
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Duties<span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Golf Course Setup</a></li>
+          <li><a href="#">Food Setup</a></li>
+          <li><a href="#">Beer Cart</a></li>
+          <li><a href="#">Sign Ups</a></li>
+          <li><a href="#">Silent Auction</a></li>
+        </ul>
+      </table>
     </a>
   </div>
   <div class="alert alert-warning text-center" ng-if="vm.volunteers.$resolved && !vm.volunteers.length">
-    No Volunteers yet, why don't you <a ui-sref="volunteers.create">create one</a>?
+    No event can be successful without the help of our wonderful volunteers <a ui-sref="volunteers.create">Click here to sign up!</a>?
   </div>
 </section>

@@ -10,6 +10,12 @@
           <input name="name" type="text" ng-model="vm.sponsor.name" id="name" class="form-control" placeholder="Enter the Sponsors Name" required>
           <div ng-messages="vm.form.sponsorForm.name.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Sponsor name is required.</p>
+             <div class="form-group" show-errors>
+          <label class="control-label" for="name">Include A Description of the Services this Sponsor Provides</label>
+          <input name="details" type="text" ng-model="vm.sponsor.details" id="details" class="form-control">
+          <input type="file" data-ng-file-select="onFileSelect($files)" accept="image/png, image/jpeg">
+          <span data-ng-if="uploadInProgress">Upload progress: {{ uploadProgress }}</span>
+          <img data-ng-src="uploadedImage" data-ng-if="uploadedImage">
           </div>
 
          <!--   <label class="control-label" for="name">Sponsorship Details</label>
@@ -19,7 +25,7 @@
           </div> -->
         </div>
         <div class="form-group">
-          <button type="submit" class="btn btn-default">{{vm.sponsor._id ? 'Update' : 'Create'}}</button>
+          <button type="submit" class="btn btn-default">Add This Sponsor To The Sponsor Page</button>
         </div>
         <div ng-show="vm.error" class="text-danger">
           <strong ng-bind="vm.error"></strong>

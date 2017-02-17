@@ -32,8 +32,8 @@
           sponsorResolve: newSponsor
         },
         data: {
-          roles: [ 'admin'],
-          pageTitle: 'Sponsors Create'
+          // roles: ['admin'],
+          pageTitle: 'Add A New Sponsor'
         }
       })
       .state('sponsors.edit', {
@@ -45,8 +45,8 @@
           sponsorResolve: getSponsor
         },
         data: {
-          roles: ['admin'],
-          pageTitle: 'Edit Sponsor {{ sponsorResolve.name }}'
+          // roles: ['admin'],
+          pageTitle: 'Edit Sponsor Details {{ sponsorResolve.name }}'
         }
       })
       .state('sponsors.view', {

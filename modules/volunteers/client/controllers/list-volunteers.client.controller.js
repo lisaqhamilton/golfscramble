@@ -9,6 +9,7 @@
 
   function VolunteersListController(VolunteersService) {
     var vm = this;
+  
 
     vm.volunteers = VolunteersService.query();
   }

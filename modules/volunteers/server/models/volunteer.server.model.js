@@ -12,8 +12,9 @@ var mongoose = require('mongoose'),
 var VolunteerSchema = new Schema({
   name: {
     type: String,
+    age: Date,
     default: '',
-    required: 'Please fill Volunteer name',
+    // required: 'Please fill Volunteer name',
     trim: true
   },
   created: {
@@ -25,5 +26,6 @@ var VolunteerSchema = new Schema({
     ref: 'User'
   }
 });
+
 
 mongoose.model('Volunteer', VolunteerSchema);
